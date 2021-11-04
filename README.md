@@ -21,3 +21,9 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Final Product 
+
+!["Main Page"](docs/Main Page.png)
+!["Add or Edit Appointment"](docs/Add or Edit Appointment.png)
+!["Delete Confirmation"](docs/Delete Confirmation.png)
