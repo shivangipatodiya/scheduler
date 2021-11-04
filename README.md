@@ -24,6 +24,6 @@ npm run storybook
 
 ## Final Product 
 
-!["Main Page"](docs/Main Page.png)
-!["Add or Edit Appointment"](docs/Add or Edit Appointment.png)
-!["Delete Confirmation"](docs/Delete Confirmation.png)
+!["Main Page"](docs/main-page.png)
+!["Add or Edit Appointment"](docs/add-edit-appointment.png)
+!["Delete Confirmation"](docs/delete-confirmation.png)
