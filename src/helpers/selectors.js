@@ -1,3 +1,5 @@
+// function to get the booked appointments of a day
+
 export function getAppointmentsForDay(state, day) {
   const selectedDay = state.days.filter((eachDay) => eachDay.name === day);
   if (selectedDay[0]) {
@@ -11,6 +13,8 @@ export function getAppointmentsForDay(state, day) {
   return [];
 }
 
+// function to get interview information
+
 export function getInterview(state, interview) {
   if (interview) {
     return {
@@ -20,6 +24,8 @@ export function getInterview(state, interview) {
   }
   return null;
 }
+
+// function to get interviewers available for the day
 
 export function getInterviewersForDay(state, day) {
   const selectedDay = state.days.filter((eachDay) => eachDay.name === day);

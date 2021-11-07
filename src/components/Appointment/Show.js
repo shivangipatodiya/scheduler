@@ -1,5 +1,7 @@
 import React from "react";
 
+// component for booked appointment slot
+
 export default function Show(props) {
   
   return (

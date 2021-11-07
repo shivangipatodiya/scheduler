@@ -2,18 +2,26 @@ import React, { useState } from "react";
 import Button from "../Button";
 import InterviewerList from "../InterviewerList";
 
+// form component to fill to book an appointment  
+
 export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [studentError, setStudentError] = useState("");
   const [interviewerError, setInterviewerError] = useState("");
+  
+  // function to validate the form for required information on saving
   function validate() {
     setStudentError("");
     setInterviewerError("");
+
+    // error for blank student name
     if (student === "") {
       setStudentError("Student name cannot be blank");
       return;
     }
+
+    //error if interviewer is not selected
     if (!interviewer) {
       setInterviewerError("Interviewer must be selected");
       return;
@@ -24,6 +32,7 @@ export default function Form(props) {
     props.onSave(student, interviewer);
   }
 
+  // reset function to remove the filled information on cancelling the form
   const reset = () => {
     setInterviewer(() => "");
     setStudent(() => "");
@@ -31,6 +40,7 @@ export default function Form(props) {
     setInterviewerError("");
   };
 
+  // function for cancelling form
   const cancel = () => {
     reset();
     props.onCancel();

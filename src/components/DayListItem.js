@@ -4,6 +4,7 @@ import "components/DayListItem.scss";
 
 import { formatSpot } from "helpers/utils";
 
+// component to show each day with remaining empty slots
 
 export default function DayListItem(props) {
   const availableSpots = formatSpot(props.spots)

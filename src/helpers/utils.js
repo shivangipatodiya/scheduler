@@ -1,3 +1,5 @@
+// function to calculate the number of spots available for a day 
+
 export function formatSpot(number) {
   if (number === 0) {
     return "no spots remaining";
@@ -6,3 +8,4 @@ export function formatSpot(number) {
   }
   return number + " spots remaining";
 }
+

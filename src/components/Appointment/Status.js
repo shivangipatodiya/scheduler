@@ -1,5 +1,7 @@
 import React from "react";
 
+// components to show the status - saving, deleting
+
 export default function Status(props) {
   return (
     <main className="appointment__card appointment__card--status">

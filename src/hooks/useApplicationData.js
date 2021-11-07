@@ -9,6 +9,8 @@ export default function useApplicationData(initial) {
     interviewers: {}
   });
 
+// PUT request to book interview
+
   function bookInterview(id, interview) {
     return axios
       .put(`/api/appointments/${id}`, { interview: { ...interview } })
@@ -32,6 +34,8 @@ export default function useApplicationData(initial) {
         });
       });
   }
+
+// DELETE request to delete an interview
 
   function cancelInterview(id) {
     return axios.delete(`/api/appointments/${id}`).then(() => {

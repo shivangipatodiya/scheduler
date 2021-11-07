@@ -52,7 +52,11 @@ export default function Appointment(props) {
   return (
     <article className="appointment">
       <Header time={props.time} />
+      
+      {/* mode for empty slot */}
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
+      
+      {/* mode for showing the booked appointment slot */}
       {mode === SHOW && (
         <Show
           onDelete={() => transition(CONFIRM)}
@@ -61,6 +65,8 @@ export default function Appointment(props) {
           onEdit={() => transition(EDIT)}
         />
       )}
+
+      {/* mode for booking a new appointment */}
       {mode === CREATE && (
         <Form
           onCancel={() => back()}
@@ -68,8 +74,14 @@ export default function Appointment(props) {
           onSave={(student, interview) => save(student, interview)}
         />
       )}
+
+      {/* mode for saving */}
       {mode === SAVING && <Status message={SAVING} />}
+
+      {/* mode for deleting */}
       {mode === DELETING && <Status message={DELETING} />}
+
+      {/* mode for confirmation to delete */}
       {mode === CONFIRM && (
         <Confirm
           message="Are you sure you would like to delete?"
@@ -77,6 +89,8 @@ export default function Appointment(props) {
           onCancel={() => transition(SHOW)}
         />
       )}
+
+      {/* mode to edit an appointment */}
       {mode === EDIT && (
         <Form
           onCancel={() => back()}
@@ -86,9 +100,13 @@ export default function Appointment(props) {
           onSave={(student, interview) => save(student, interview)}
         />
       )}
+
+      {/* mode for error while saving an appointment */}
       {mode === ERROR_SAVE && (
         <Error message="Could not save appointment." onClose={() => back()} />
       )}
+
+      {/* mode for error while deleting an appointment */}
       {mode === ERROR_DELETE && (
         <Error message="Could not delete appointment." onClose={() => back()} />
       )}
